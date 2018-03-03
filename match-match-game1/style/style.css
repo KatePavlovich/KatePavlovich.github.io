@@ -1,0 +1,119 @@
+*{margin:0;
+    padding:0;}
+   body {text-align: center;
+   font-size: 1.5em;} 
+  a {text-decoration: none;}  
+   .wrap{  margin: 0 auto;
+    max-width: 1200px;} 
+
+  h1, h2{text-transform: uppercase;
+    margin: 2em;
+    color: #714d7b;}
+
+    
+  .gamerules{text-align: left;
+    line-height: 1.8;}
+
+  .buttonPlay {text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #351c3c;
+    background-image: -webkit-linear-gradient( -45deg, #112b3c, #351c3c 70%);
+    color: #fff;
+    padding: 2em 5em; 
+    cursor: pointer; 
+    clear: both;
+    font-weight: bold;
+  }
+  
+  .levels-menu, .cardsBacks-menu {list-style: none;}
+  .levels-menu li, .cardsBacks-menu li{display: inline-block;
+    margin-right: 3em;}
+  .levels-menu a:hover{color: green;}
+  .levels-menu a[data-level="2"]:hover{color: orange;}
+  .levels-menu a[data-level="3"]:hover{color: red;}
+  .cardsBacks-menu li {width: 180px;
+     height: 140px;
+    border: 1px solid #c1bcbc;
+    border-radius: 10px;}
+  .cardsBacks-menu li:hover{box-shadow: 0 0 20px rgba(48,226,43,0.5);}
+ 
+
+  #game {transform-style: preserve-3d;
+    perspective: 500px;}
+
+
+  .container {
+    float: left;
+    width: 160px;
+    height: 120px;
+    margin: 2em;
+    cursor: pointer;
+    z-index: 50; 
+    padding: 5px;
+    display: block;
+    perspective: 500px;
+    position: relative;}
+
+    .card {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transform-style: preserve-3d;
+      transition: .4s ease-in-out;}
+
+     .front, .back {
+        border: 1px solid #c1bcbc;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        display: block;
+        transition: transform .5s;
+        -webkit-transition: -webkit-transform .5s;}
+
+
+    .back img {
+        max-width: 100%;
+        margin: 0 auto;
+        max-height: 100%;}
+    
+    
+    .back { -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);}
+
+    
+    .card.flipped .front{
+          -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);}
+   
+    .card.flipped .back {
+          -webkit-transform: rotateY(0);
+          transform: rotateY(0);}
+    .correct .back {box-shadow: 0 0 10px rgba(48,226,43,0.5);}
+    .card.flipped.hide { opacity: 0;
+        transition: opacity  ease-in-out .5s;}
+
+
+    .congratulations {font-size: 4em;
+        -webkit-animation: colorChanging 3s  ease-in-out infinite; 
+        animation: colorChanging 3s ease-in-out infinite;}
+
+    @keyframes colorChanging {
+    0%  { color: rgb(232, 232, 14); }
+    50% { color: rgb(64, 4, 34); }
+    100%  { color: rgb(4, 94, 34); }
+    }
+
+    -webkit-@keyframes colorChanging {
+    0%  { color: rgb(232, 232, 14); }
+    50% { color: rgb(64, 4, 34); }
+    100%  { color: rgb(4, 94, 34); }
+    }
+
+    .back1 {background: url(../img/cardBack1.jpg) no-repeat;}
+    .back2 {background: url(../img/cardBack2.jpg) no-repeat;}
+    .back3 {background: url(../img/cardBack3.jpg) no-repeat;}
