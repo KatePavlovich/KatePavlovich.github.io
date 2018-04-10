@@ -1159,7 +1159,8 @@ footer {
   max-width: 730px;
 }
 
-.main-menu {
+.main-menu,
+.hidden-menu-ticker {
   display: none;
 }
 
@@ -1169,6 +1170,49 @@ footer {
   max-width: 730px;
   margin: 0 auto 1.5em;
   position: relative;
+}
+
+.hidden-menu-links,
+.footer-hidden-menu-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  line-height: 2;
+  list-style: none;
+  padding: 1em;
+  background-color: #fd926d;
+  top: 18%;
+  z-index: 2;
+  font-size: 1.5em;
+}
+
+.hidden-menu-links a,
+.footer-hidden-menu-links a {
+  color: white;
+}
+
+.hidden-menu-links a:hover,
+.footer-hidden-menu-links a:hover {
+  color: red;
+}
+
+.hidden-menu-ticker:checked ~ .hidden-menu-links {
+  right: 0px;
+  display: flex;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu .menu-line1 {
+  -webkit-transform: rotate(45deg);
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu .menu-line2 {
+  opacity: 0;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu .menu-line3 {
+  -webkit-transform: rotate(-45deg);
+  top: 1.3em;
 }
 
 .hidden-menu-title {
@@ -1187,6 +1231,7 @@ footer {
   right: 1.7em;
   width: 20px;
   height: 4px;
+  z-index: 3;
 }
 
 .menu-line2 {
@@ -1215,7 +1260,6 @@ footer {
 .slaider-buttons-color:first-child {
   margin-left: 10px;
 }
-
 
 .slaider-links-container {
   width: 417px;
@@ -1509,6 +1553,16 @@ footer {
   margin: 0 1em 2.5em;
 }
 
+.hidden-menu-ticker:checked ~ .btn-menu .menu-line1 {
+  top: 2.5em;
+  right: 1em;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu .menu-line3 {
+  top: 2.5em;
+  right: 1em;
+}
+
 .icons-line-wrapper-iphone640 {
   flex-direction: column;
   background: #fff;
@@ -1666,6 +1720,31 @@ main {
   box-shadow: none;
   -webkit-transform: scale(1);
   height: auto;
+}
+
+.footer-hidden-menu-ticker:checked ~ .footer-hidden-menu-links {
+  display: flex;
+  top: -185px;
+  left: -96px;
+  width: 230px;
+  background-color: #000;
+}
+
+.footer-hidden-menu-ticker {
+  display: none;
+}
+
+.footer-hidden-menu-ticker:checked ~ .footer-btn-menu .menu-line1 {
+  -webkit-transform: rotate(45deg);
+}
+
+.footer-hidden-menu-ticker:checked ~ .footer-btn-menu .menu-line2 {
+  opacity: 0;
+}
+
+.footer-hidden-menu-ticker:checked ~ .footer-btn-menu .menu-line3 {
+  -webkit-transform: rotate(-45deg);
+  top: 3.3em;
 }
 }
 
