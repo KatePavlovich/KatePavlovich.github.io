@@ -39,6 +39,7 @@ body {
     justify-content: space-around;
     margin-top: 10%;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 .stan {
@@ -926,6 +927,42 @@ ul {
     }    
 }
 
+
+
+.marquee {
+    white-space:nowrap;
+    overflow:hidden;
+    margin-top: 2em;
+}
+ 
+.marquee span {
+    color: $lightGrey;
+    font-size: 3em;
+    display:inline-block;
+    padding-left:100%;
+    -webkit-animation: marquee 20s infinite linear;
+    animation: marquee 20s infinite linear;
+}
+ 
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(-100%, 0);
+    }
+}
+
+@keyframes marquee{
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+
 /*desktop: 1024px*/
 $breakpoint-desktop: 1024px;
 @media screen and (max-width: $breakpoint-desktop) {
@@ -936,4 +973,34 @@ $breakpoint-desktop: 1024px;
     .plate {
         @include position(8%, 18%);
     }  
+}
+
+/*tablet: 768px*/
+$breakpoint-tablet: 768px;
+@media screen and (max-width: $breakpoint-tablet) {
+     .plate {
+        @include position(5%, 32%);
+    }
+    
+    .kartman {
+        transform: scale(.9);
+        margin-left: 3em;
+    }
+
+    .rainy-wrapper {
+        margin: 9em 0 0 7em;
+    }  
+
+}
+
+/*mobile: 414px*/
+$breakpoint-mobile: 414px;
+@media screen and (max-width: $breakpoint-mobile) {
+     .plate {
+        @include position(1%, 64%);
+    }
+
+    .puddle  {
+        top: 95%;
+    }
 }
